@@ -1,0 +1,15 @@
+.NavBar {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+}
+
+.NavBar .left {
+    position: absolute;
+    left: 100px;
+}
+
+.NavBar .right {
+    position: absolute;
+    right: 100px;
+}

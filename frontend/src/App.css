@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+button {
+  font-family: 'Rubik', sans-serif;
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: gray;
+}
