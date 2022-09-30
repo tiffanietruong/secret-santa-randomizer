@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
+.app {
+  font-family: 'Rubik', sans-serif;
+  background-image: url('../public/pexels-craig-adderley-1671867.jpg');
+  background-size: cover;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 1px 1px gray;
+}
+
+p {
+  font-size: 1rem;   
+  margin: 2px;
+  text-shadow: 1px 1px gray;
+}
+
 button {
   font-family: 'Rubik', sans-serif;
   color: black;
