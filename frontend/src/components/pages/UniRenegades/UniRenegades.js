@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@mui/material';
 import './UniRenegades.css';
 import { useNavigate } from 'react-router-dom';
@@ -7,8 +7,9 @@ import CustomCard from '../../CustomCard/CustomCard';
 const UniRenegades = () => {
     const navigate = useNavigate();
 
-    const [years, setYears] = useState(['2016', '2017', '2018', '2019', '2020', '2021']);
-    const [people, setPeople] = useState(['Clover', 'Isaac', 'Joey', 'Julia', 'Natalie', 'Tiffanie', 'Tiffany', 'Vanessa']);
+    // TODO: replace with database call
+    const years = ['2016', '2017', '2018', '2019', '2020', '2021'];
+    const people = ['Clover', 'Isaac', 'Joey', 'Julia', 'Natalie', 'Tiffanie', 'Tiffany', 'Vanessa'];
 
     return (
         <div className='uni-renegades'>
@@ -34,7 +35,7 @@ const UniRenegades = () => {
                 className="button-this-year"
                 variant='outlined'
                 color="inherit"
-                onClick={() => { navigate('/'); }}
+                onClick={() => { navigate('/uni-renegades/this-year'); }}
                 sx={{ mt: 3 }}
             >
                 THIS YEAR

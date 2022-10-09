@@ -7,6 +7,14 @@
   color: white;
 }
 
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
 h1 {
   font-size: 3rem;
   text-shadow: 1px 1px gray;
