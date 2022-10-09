@@ -1,3 +1,7 @@
+h1 {
+    margin: 0px;
+}
+
 .uni-renegades {
     min-height: 100vh;
     display: flex;
@@ -28,8 +32,4 @@
     flex-wrap: wrap;
     gap: 10px;
     margin: 30px;
-}
-
-h1 {
-    margin: 0px;
 }

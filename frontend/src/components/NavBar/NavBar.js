@@ -31,13 +31,6 @@ const NavBar = () => {
                 >
                     Uni Renegades
                 </Button>
-                <Button
-                    variant='filled'
-                    onClick={() => { navigate('/2022'); }}
-                    sx={{ color: 'white', m: 1 }}
-                >
-                    2022
-                </Button>
             </span>
         </div>
     );

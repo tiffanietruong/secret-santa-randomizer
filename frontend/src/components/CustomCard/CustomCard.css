@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-.year-container {
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.year {
+.container-content {
     font-family: 'Great Vibes', cursive;
     font-size: 5rem;
     color: white;
