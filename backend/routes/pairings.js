@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
         const result = await pairing.save()
         res.send(result)
     }
-    catch (e) {
-        console.log("ERROR - failed to save Pairing", e);
+    catch (error) {
+        console.log("ERROR - failed to save Pairing", error);
         res.status(500).send();
     }
 });
@@ -55,8 +55,8 @@ router.post('/batch', async (req, res) => {
                 pairingsToSave.push(new Pairing({ year: year, santa: santa, santee: santee }));
             }
         }
-        catch (e) {
-            console.log("ERROR - failed to process Pairing(s) during batch save", e);
+        catch (error) {
+            console.log("ERROR - failed to process Pairing(s) during batch save", error);
             res.status(500).send();
             return;
         }
@@ -67,10 +67,59 @@ router.post('/batch', async (req, res) => {
             console.log('Successfully saved %s Pairing(s).', pairingsToSave.length);
             res.status(200).send();
         })
-        .catch((e) => {
-            console.log("ERROR - failed to save Pairing(s)", e)
+        .catch((error) => {
+            console.log("ERROR - failed to save Pairing(s)", error)
             res.status(500).send();
         });
 });
+
+/****************** DELETE ROUTES ******************/
+
+// Delete the pairing with the given santa and year.
+router.delete('/', async (req, res) => {
+    const year = req.body.year;
+    const santa = req.body.santa;
+
+    // Delete all favourites documents involving this quiz 
+    try {
+        const result = await Pairing.deleteOne({ year: year, santa: santa });
+        if (result) { 
+            if (result.deletedCount === 0) {
+                console.log(`There are 0 pairings for santa [${santa}] in year [${year}].`);
+            }
+            else {
+                console.log(`Successfully deleted ${result.deletedCount} Pairing(s) for santa [${santa}] in year [${year}].`)
+            }
+            res.status(200).send();
+        }
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).send();
+    }
+})
+
+// Delete all pairings for a given year
+router.delete('/all/year', async (req, res) => {
+    const year = req.body.year;
+
+    try {
+        const result = await Pairing.deleteMany({ year: year });
+        if (result) { 
+            if (result.deletedCount === 0) {
+                console.log(`There are 0 pairings for year [${year}].`);
+            }
+            else {
+                console.log(`Successfully deleted ${result.deletedCount} Pairing(s) for year [${year}].`)
+            }
+            res.status(200).send();
+        }
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).send();
+    }
+})
+
 
 module.exports = router;
