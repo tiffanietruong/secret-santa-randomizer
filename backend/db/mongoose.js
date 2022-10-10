@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = process.env.MONGODB_URI || "mongodb+srv://tiffanietruong:nXVQwnzG4B5tO7Ng@secretsantarandomizercl.dbukcdx.mongodb.net/data?retryWrites=true&w=majority";
+const mongoURI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@secretsantarandomizercl.dbukcdx.mongodb.net/data?retryWrites=true&w=majority`;
 
 // Options argument used when connecting to mongoose
 const options = { 
