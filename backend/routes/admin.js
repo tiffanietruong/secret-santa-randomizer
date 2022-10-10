@@ -5,8 +5,6 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const Pairing = require("../models/pairing");
-
 /* Global data to change as needed */
 const year = "2022";
 const UNI_RENEGADES = {
@@ -14,12 +12,12 @@ const UNI_RENEGADES = {
     "EXCLUSIONS": {
         "Clover": [],
         "Isaac": [],
-        "Joey": [],
-        "Julia": ["Clover", "Isaac", "Joey", "Julia", "Natalie", "Tiffanie"],
-        "Natalie": [],
-        "Tiffanie": ["Clover"],
+        "Joey": ["Vanessa"],
+        "Julia": ["Isaac"],
+        "Natalie": ["Julia"],
+        "Tiffanie": [],
         "Tiffany": [],
-        "Vanessa": []
+        "Vanessa": ["Natalie"]
     }
 };
 
