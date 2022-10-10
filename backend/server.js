@@ -26,6 +26,9 @@ app.use('/api/admin', adminRouter);
 const pairingRouter = require('./routes/pairings');
 app.use('/api/pairing', pairingRouter);
 
+const userRouter = require('./routes/users');
+app.use('/api/user', userRouter);
+
 /**
  * Listen for requests 
  */
