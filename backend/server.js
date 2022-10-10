@@ -19,6 +19,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 /**
  * Routes
  */
+const adminRouter = require('./routes/admin');
+app.use('/api/admin', adminRouter);
+
 const pairingRouter = require('./routes/pairings');
 app.use('/api/pairing', pairingRouter);
 
