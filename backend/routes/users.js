@@ -59,8 +59,8 @@ router.get('/:name', async (req, res) => {
 /****************** PATCH ROUTES ******************/
 
 // Updates a user given their name and previous password.
-router.patch('/:name', async (req, res) => {
-    const name = req.params.name;
+router.patch('/', async (req, res) => {
+    const name = req.body.name;
     const filter = { name: name, password: req.body.oldPassword };
     const update = { password: req.body.newPassword };
     

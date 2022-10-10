@@ -26,12 +26,11 @@ const RevealDialog = (props) => {
             .then((res) => {
                 if (res.status === 200) {
                     // Reveal passsword matches -- get secret santee 
-                    if (input == res.data.password) {
+                    if (input === res.data.password) {
                         axios({
                             method: 'get',
                             url: `http://localhost:5000/api/pairing`,
                             params: { "year": year, "santa": secretSanta },
-                            responseType: 'json'
                         })
                             .then((res) => {
                                 if (res.status === 200) {

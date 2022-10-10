@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
 
 import './ThisYear.css';
 import RevealCard from '../../RevealCard/RevealCard';
+import ResetDialog from '../../ResetDialog/ResetDialog';  
 
 const ThisYear = () => {
-    const navigate = useNavigate();
-    const year = 2022;
+    const year = "2022";
     const people = ['Clover', 'Isaac', 'Joey', 'Julia', 'Natalie', 'Tiffanie', 'Tiffany', 'Vanessa'];
 
     return (
@@ -20,16 +18,8 @@ const ThisYear = () => {
                         <RevealCard year={year} secretSanta={person} />
                     ))}
                 </div>
-                {/* <RevealCard secretSanta={"Tiffanie"} /> */}
             </div>
-            {/* <Button
-                variant='outlined'
-                color="inherit"
-                onClick={() => { navigate('/'); }}
-                sx={{ mt: 3 }}
-            >
-                RESET YOUR REVEAL PASSWORD
-            </Button> */}
+            <ResetDialog/>
         </div>
     );
 }
