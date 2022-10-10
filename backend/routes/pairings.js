@@ -73,6 +73,29 @@ router.post('/batch', async (req, res) => {
         });
 });
 
+/****************** GET ROUTES ******************/
+
+// Gets a user given their name and year
+router.get('/', async (req, res) => {
+    const year = req.query.year; 
+    const santa = req.query.santa;
+
+    try {
+        const user = await Pairing.findOne({ year: year, santa: santa });
+        if (user) {
+            res.send(user);
+        }
+        else {
+            res.status(404).send();
+        }
+    }
+    catch (error) {
+        // TODO: add check for database disconnection - 500 error
+        console.log("ERROR - failed to get User", error);
+        res.status(404).send();
+    }
+});
+
 /****************** DELETE ROUTES ******************/
 
 // Delete the pairing with the given santa and year.

@@ -15,8 +15,9 @@ const CustomCard = (props) => {
         console.log(`Failed to find image for card with content ${cardContent}.`);
     }
 
+    // TODO: make stats page with to={cardContent.toLowerCase()}
     return (
-        <Link to={cardContent.toLowerCase()} style={{ textDecoration: 'none' }}>
+        <Link to={'/'} style={{ textDecoration: 'none' }}>
             <Card sx={{ width: 300, height: 300 }}>
                 <Box sx={{ position: 'relative' }}>
                     <CardActionArea>

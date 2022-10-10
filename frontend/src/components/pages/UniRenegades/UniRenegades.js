@@ -7,7 +7,7 @@ import CustomCard from '../../CustomCard/CustomCard';
 const UniRenegades = () => {
     const navigate = useNavigate();
 
-    // TODO: replace with database call
+    // NOTE: could replace with database call but also static data for personal use
     const years = ['2016', '2017', '2018', '2019', '2020', '2021'];
     const people = ['Clover', 'Isaac', 'Joey', 'Julia', 'Natalie', 'Tiffanie', 'Tiffany', 'Vanessa'];
 

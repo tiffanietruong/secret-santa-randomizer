@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 
 // TODO: add security even though none of the uniren would or know how to use frontend dev tools :) 
@@ -17,20 +18,43 @@ const RevealDialog = (props) => {
     };
 
     const handleReveal = () => {
-        // TODO: get reveal passcode from database
-        const revealPassword = "abc";
-        if (revealPassword === input) {
-            // TODO: get person from database
-            const secretSantee = "PLACEHOLDER";
-            console.log(`matched ${revealPassword}`);
-            setIsRevealed(true);
-            setSecretSantee(secretSantee);
-            handleClose();
-        }
-        else {
-            setError(true);
-            setErrorText("Sorry, this reveal password is incorrect.");
-        }
+        // Get reveal password from database and check for match
+        axios({
+            method: 'get',
+            url: `http://localhost:5000/api/user/${secretSanta}`
+        })
+            .then((res) => {
+                if (res.status === 200) {
+                    // Reveal passsword matches -- get secret santee 
+                    if (input == res.data.password) {
+                        axios({
+                            method: 'get',
+                            url: `http://localhost:5000/api/pairing`,
+                            params: { "year": year, "santa": secretSanta },
+                            responseType: 'json'
+                        })
+                            .then((res) => {
+                                if (res.status === 200) {
+                                    setIsRevealed(true);
+                                    setSecretSantee(res.data.santee);
+                                    handleClose();
+                                }
+                                else {
+                                    console.log(res.error);
+                                }
+                            });
+                    }
+                    // Reveal password did not match -- show error
+                    else {
+                        setError(true);
+                        setErrorText("Sorry, this reveal password is incorrect.");
+                    }
+                }
+                // HTTP request returned with error
+                else {
+                    console.log(res.error);
+                }
+            });
     }
 
     return (
@@ -53,7 +77,7 @@ const RevealDialog = (props) => {
                         error={error}
                         helperText={errorText}
                         onChange={(e) => { setInput(e.target.value); }}
-                        onKeyPress={(e) => { if (e.key === 'Enter') { handleReveal(); e.preventDefault(); }}}
+                        onKeyPress={(e) => { if (e.key === 'Enter') { handleReveal(); e.preventDefault(); } }}
                         value={input}
                     />
                 </DialogContent>
