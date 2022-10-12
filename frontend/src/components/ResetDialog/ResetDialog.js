@@ -31,7 +31,7 @@ const ResetDialog = () => {
         // Get reveal password from database and check for match
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/user/${uniRenegade}`
+            url: `/api/user/${uniRenegade}`
         })
             .then((res) => {
                 if (res.status === 200) {
@@ -39,7 +39,7 @@ const ResetDialog = () => {
                     if (oldPassword === res.data.password) {
                         axios({
                             method: 'patch',
-                            url: `http://localhost:5000/api/user`,
+                            url: `/api/user`,
                             data: { "name": uniRenegade, "oldPassword": oldPassword, "newPassword": newPassword },
                         })
                             .then((res) => {

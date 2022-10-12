@@ -21,7 +21,7 @@ const RevealDialog = (props) => {
         // Get reveal password from database and check for match
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/user/${secretSanta}`
+            url: `/api/user/${secretSanta}`
         })
             .then((res) => {
                 if (res.status === 200) {
@@ -29,7 +29,7 @@ const RevealDialog = (props) => {
                     if (input === res.data.password) {
                         axios({
                             method: 'get',
-                            url: `http://localhost:5000/api/pairing`,
+                            url: `/api/pairing`,
                             params: { "year": year, "santa": secretSanta },
                         })
                             .then((res) => {
