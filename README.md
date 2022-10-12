@@ -5,7 +5,7 @@ A React application that allows users to input names and generate random pairing
 
 Input is interactive and responsive: simply input names and exclusion lists in the text fields and see what the program registers in real-time. 
 
-The app can be found here: http://tiffie44.github.io/secret-santa-randomizer
+Version 1 of the app can be found here: http://tiffanietruong.github.io/secret-santa-randomizer
 
 *:･ﾟ Happy holidays! *:･ﾟ
 ## Inspiration
@@ -20,7 +20,7 @@ In my first ever look at JavaScript and React, I present my first real attempt a
 > And Julia ended up getting Isaac for almost three years in a row, so there was some personal motivation to get something up and running.
 
 ## Prerequisites
-Feel free to play around with names and generate your own permutations at http://tiffie44.github.io/secret-santa-randomizer!
+Feel free to play around with names and generate your own permutations at http://tiffanietruong.github.io/secret-santa-randomizer!
 
 Otherwise, the app can be run using the zip file and an adequate version of `Node.js` and `npm` installed.
 At the time of writing, this is my version of `Node.js`:
