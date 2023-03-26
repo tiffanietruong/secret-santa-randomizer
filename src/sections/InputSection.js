@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from '@mui/material/TextField';
 
 const Title = styled.h2`
 	font-size: 2rem;
@@ -16,8 +15,20 @@ const Instructions = styled.p`
 	margin-top: 0.5rem;
 `;
 
-const UserInput = (props) => {
-	const { accentColour, instructions, title } = props;
+const TextArea = styled.textarea`
+	width: 100%;
+	height: 100px;
+	padding: 1rem 1rem;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	font-size: 1rem;
+	resize: none;
+	background-color: #f8f8f8;
+`;
+
+const InputSection = (props) => {
+	const { accentColour, instructions, onChange, textAreaId, title } = props;
 
 	return (
 		<div>
@@ -27,15 +38,12 @@ const UserInput = (props) => {
 			<Instructions>
 				{instructions}
 			</Instructions>
-			<TextField
-				id="outlined"
-				label={title}
-				defaultValue=""
-				multiline
-				fullWidth
+			<TextArea
+				id={textAreaId}
+				onChange={(e) => onChange(e.target.value)}
 			/>
 		</div>
 	);
 }
 
-export default UserInput;
+export default InputSection;

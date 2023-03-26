@@ -2,15 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     h1 {
-        font-family: 'Vidaloka', serif;
+        font-family: 'Delicious Handrawn', cursive;
     }
 
     h2 {
-        font-family: 'Vidaloka', serif;
+        font-family: 'Delicious Handrawn', cursive;
     }
 
     body {
-        font-family: 'Coming Soon', cursive;
+        font-family: 'Thasadith', sans-serif;
+        font-weight: bold;
     }
 `;
 

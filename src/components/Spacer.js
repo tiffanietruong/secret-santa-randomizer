@@ -1,9 +1,8 @@
-import { useSlotProps } from '@mui/base';
 import React from 'react';
 import styled from 'styled-components';
 
 const Space = styled.div`
-    margin-top: ${props => props.spacing} rem;
+    margin: ${props => props.spacing}rem 0rem;
 `;
 
 const Spacer = (props) => {

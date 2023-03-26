@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    font-family: 'Vidaloka', serif;
+    font-size: 1rem;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: bold;
 	color: black;
 	background: white;
 	border: 2px solid black;
-	font-size: 1.2rem;
-	margin: 1rem;
+    margin: 0.5rem;
 	padding: 0.5rem 1rem;
 	border-radius: 5px;
     transition: 0.3s;
