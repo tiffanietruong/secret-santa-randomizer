@@ -12,7 +12,6 @@ export function parseNames(nameInput) {
 	const parsedNames = names.map(name => name.trim()).filter(name => "" !== name);
 
 	// (3) Remove duplicate names
-	// Remove whitespace around each nane
 	return [...new Set(parsedNames)];
 }
 

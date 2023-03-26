@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Space = styled.div`
-    margin: ${props => props.spacing}rem 0rem;
+    height: ${props => props.spacing}px;
 `;
 
 const Spacer = (props) => {
