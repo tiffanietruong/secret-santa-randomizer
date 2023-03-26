@@ -10,18 +10,18 @@ import { OutlinedButton } from './components/Buttons';
 import Spacer from './components/Spacer';
 
 import { parseNames } from './utils/parsingUtils';
+import { IDS } from './ids';
 
 const App = () => {
     const [names, setNames] = useState([]);
     const [exclusions, setExclusions] = useState({});
-    const nameId = "nameTextAreaId";
 
     const handleNameChange = (newNameString) => {
         setNames(parseNames(newNameString));
     }
 
     const handleClearButtonClick = () => {
-        const nameTextArea = document.getElementById(nameId);
+        const nameTextArea = document.getElementById(IDS.NAME_TEXT_AREA);
         nameTextArea.value='';
         handleNameChange('');
     }
@@ -37,6 +37,7 @@ const App = () => {
                 <Spacer spacing={3} /> 
                 <DisplaySection
                     names={names}
+                    handleNameChange={handleNameChange}
                 >
                 </DisplaySection>
                 <Spacer spacing={7} /> 
@@ -44,7 +45,7 @@ const App = () => {
                     accentColour='palevioletred'
                     instructions='Enter a comma-separated list of names. Duplicates will be removed.'
                     onChange={handleNameChange}
-                    textAreaId={nameId}
+                    textAreaId={IDS.NAME_TEXT_AREA}
                     title='Names'>
                 </InputSection>
                 <Spacer spacing={3} />
