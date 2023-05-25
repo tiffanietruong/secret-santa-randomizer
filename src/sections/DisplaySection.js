@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NameCard from '../components/NameCard';
-import { fadeIn, underlineOnHover } from '../components/Animations';
-import { IDS } from '../ids';
-import { alphabeticizeNamesInString } from '../utils/parsingUtils';
+import AlphabeticizeText from '../components/AlphabeticizeText';
 
 const Container = styled.div`
     display: flex;
@@ -16,20 +14,6 @@ const Container = styled.div`
 const GrayText = styled.p`
     color: gray;
 `;
-
-const AlphabeticizeText = styled.p`
-    color: gray;
-    animation: ${fadeIn} 0.3s ease-in-out;
-    ${underlineOnHover}
-`;
-
-const onAlphabeticizeButtonClick = (handleNameChange) => {
-    const nameTextArea = document.getElementById(IDS.NAME_TEXT_AREA);
-    const currentNameInput = nameTextArea.value;
-    const alphabeticizedNameInput = alphabeticizeNamesInString(currentNameInput);
-    nameTextArea.value=alphabeticizedNameInput;
-    handleNameChange(alphabeticizedNameInput);
-}
 
 const DisplaySection = (props) => {
     const { handleNameChange, names } = props;
@@ -50,9 +34,7 @@ const DisplaySection = (props) => {
                     </NameCard>
                 )}
             </Container>
-            <AlphabeticizeText onClick={() => {onAlphabeticizeButtonClick(handleNameChange)}}>
-                Alphabetize
-            </AlphabeticizeText>
+            <AlphabeticizeText handleNameChange={handleNameChange}></AlphabeticizeText>
         </div>
     );
 }

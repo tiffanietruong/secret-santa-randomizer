@@ -6,11 +6,11 @@ import Header from './sections/Header';
 import InputSection from './sections/InputSection';
 import DisplaySection from './sections/DisplaySection';
 
-import { OutlinedButton } from './components/Buttons';
-import Spacer from './components/Spacer';
+import { OutlinedButton } from './components/common/Buttons';
+import Spacer from './components/common/Spacer';
 
-import { parseNames } from './utils/parsingUtils';
 import { IDS } from './ids';
+import { parseNames } from './utils/parsingUtils';
 
 const App = () => {
     const [names, setNames] = useState([]);

@@ -21,5 +21,5 @@ export function parseNames(nameInput) {
  * @returns 				an alphabetically sorted string containing the same names
  */
 export function alphabeticizeNamesInString(nameInput) {
-	return parseNames(nameInput).sort((a, b) => { return a.toLowerCase() <= b.toLowerCase() ? -1 : 1}).join(',');
+	return parseNames(nameInput).sort((a, b) => { return a.toLowerCase() < b.toLowerCase() ? -1 : 1}).join(',');
 }

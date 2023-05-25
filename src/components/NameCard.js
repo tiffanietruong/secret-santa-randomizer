@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { fadeIn } from '../components/Animations';
+import { fadeIn } from './common/Animations';
 
 const CardContainer = styled.div`
 	width: 125px;
