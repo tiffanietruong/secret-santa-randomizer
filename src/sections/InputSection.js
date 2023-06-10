@@ -28,7 +28,7 @@ const TextArea = styled.textarea`
 `;
 
 const InputSection = (props) => {
-	const { accentColour, instructions, onChange, setIsClearButton, textAreaId, title } = props;
+	const { accentColour, instructions, onChange, setIsClearButton, textareaId, title } = props;
 
 	return (
 		<div>
@@ -39,7 +39,7 @@ const InputSection = (props) => {
 				{instructions}
 			</Instructions>
 			<TextArea
-				id={textAreaId}
+				id={textareaId}
 				onChange={(e) => {
 					onChange(e.target.value);
 					setIsClearButton(true);

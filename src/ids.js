@@ -1,5 +1,6 @@
 const IDS = {
-    NAME_TEXT_AREA: 'nameTextAreaId'
+    NAME_TEXTAREA: 'nameTextareaId',
+    EXCLUSION_TEXTAREA: 'exclusionsTextareaId'
 };
 
 export { IDS };

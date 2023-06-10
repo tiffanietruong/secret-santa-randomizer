@@ -16,7 +16,7 @@ const GrayText = styled.p`
 `;
 
 const DisplaySection = (props) => {
-    const { handleNameChange, names } = props;
+    const { exclusions, handleNameChange, names } = props;
 
     return (
         names.length === 0 ? 
@@ -30,6 +30,7 @@ const DisplaySection = (props) => {
                 {names.map((name, index) => 
                     <NameCard 
                         accentColour={index % 2 == 0 ? "darkseagreen" : "palevioletred"}
+                        exclusions={exclusions[name]}
                         name={name}>
                     </NameCard>
                 )}

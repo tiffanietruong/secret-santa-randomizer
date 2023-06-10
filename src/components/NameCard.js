@@ -17,12 +17,25 @@ const Name = styled.h1`
 	text-shadow: 1px 1px 2px black;
 `;
 
+// Uncomment when implementing exclusions
+const Subtext = styled.body`
+	color: white;
+	text-shadow: 1px 1px 2px red;
+`;
+
 const NameCard = (props) => {
-	const { accentColour, name } = props;
+	const { accentColour, exclusions, name } = props;
+
+	const createExclusionString = () => {
+		if (!exclusions || exclusions.length === 0) return;
+		console.log("exclusions yes", exclusions);
+		return ' will not be assigned to ' + exclusions.join(', ');
+	};
 
 	return (
 		<CardContainer accentColour={accentColour}>
 			<Name>{name}</Name>
+			{exclusions && exclusions.length > 0 && <Subtext>{createExclusionString()}</Subtext>}
 		</CardContainer>
 	);
 }

@@ -12,7 +12,7 @@ const Text = styled.p`
 `;
 
 const onClick = (handleNameChange) => {
-    const nameTextarea = document.getElementById(IDS.NAME_TEXT_AREA);
+    const nameTextarea = document.getElementById(IDS.NAME_TEXTAREA);
     const names = nameTextarea.value;
     const alphabeticizedNames = alphabeticizeNamesInString(names);
     nameTextarea.value=alphabeticizedNames;
